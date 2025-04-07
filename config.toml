@@ -1,7 +1,7 @@
 baseURL = "/"
 languageCode = "en-US"
 defaultContentLanguage = "en"
-title = "AWS Modernization Workshop Sample"
+title = "AWS Coder DX Workshop"
 theme = "hugo-theme-learn"
 metaDataFormat = "yaml"
 defaultContentLanguageInSubdir= "false"
@@ -14,9 +14,9 @@ enableEmoji = true
   # See the config.toml file from this documentation site to have an example.
   #editURL = ""
   # Author of the site, will be used in meta information
-  author = "Patrick Vassell"
+  author = "Greg Hoelzer"
   # Description of the site, will be used in meta information
-  description = "AWS Modernization Workshop"
+  description = "AWS Coder Developer Experience Workshop"
   # Shows a checkmark for visited pages on the menu
   showVisitedLinks = true
   # Disable search function. It will hide search bar
@@ -68,8 +68,8 @@ url = "https://aws.amazon.com/builders-library/"
 weight = 11
 
 [[menu.shortcuts]]
-name = "<i class='far fa-lightbulb'></i> Modernization with AWS"
-url = "https://aws.amazon.com/blogs/modernizing-with-aws/"
+name = "<i class='far fa-lightbulb'></i> Agentic AI Development with Coder"
+url = "https://coder.com/blog/agentic-ai-meets-coder/"
 weight = 20
 
 [[menu.shortcuts]]

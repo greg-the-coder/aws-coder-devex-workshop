@@ -6,20 +6,29 @@ weight: 1
 
 # Introduction
 
-## Learning Objectives <!-- MODIFY THIS SUBHEADING -->
+## Supercharge Developer Experience with Coder on AWS
 
-This paragraph block should highlight the learning objectives of the workshop. A bulleted list works well for this purpose.
+Lean how to unlock the productivity of your developers on AWS with Coder.  Key learning objectives of this workshop include:
+<ul>
+    <li> Get hands-on and understand the Developer Experience </li>
+    <li> Deploy and explore Cloud Development Environment (CDE) infrastructure </li>
+    <li> Create and manage Coder CDE Templates  </li>
+    <li> Tailor Coder CDE Workspaces to Developer Personas </li>
+    <li> Troubleshoot and monitor the Coder CDE Platform </li>
+</ul>
 
-## Workshop Structure <!-- MODIFY THIS SUBHEADING -->
-This paragraph block should be utilized to briefly explain the submodules that are going to be presented as well as the approximate total time for the workshop and individual submodules. <br>
+## Coder on AWS DX Workshop 
+This workshop is designed for anyone with 200-Level AWS skills interested in improving the productivity and experience of anyone who codes in their organization.  The workshop is intended to be delivered in 2 Hours or less, and will cover deploying Coder Cloud Development Environment platform infrastructurea and Workspaces in AWS. <br>
 
-For example:
+Workshop Agenda:
 <ul>
     <li> Prerequisites *(15 minutes)* </li>
     <li> Setting up an account for the solution *(15 minutes)* </li>
-    <li> Module 1: Module 1 Title *(30 minutes)* </li>
-    <li> Module 2: Module 2 Title *(30 minutes)* </li>
-    <li> Module 3: Module 3 Title *(30 minutes)* </li>
+    <li> Module 1: Coder Infrastructure and Deployment *(15 minutes)* </li>
+    <li> Module 2: Persona-Based Workspace Setup *(20 minutes)* </li>
+    <li> Module 3: Template and Workspace Management *(25 minutes)* </li>
+    <li> Module 4: Development Workflow and IDE Testing *(25 minutes)* </li>
+    <li> Module 5: Coder Observability and Monitoring *(15 minutes)* </li>
 </ul>
 
 {{% notice info %}}
