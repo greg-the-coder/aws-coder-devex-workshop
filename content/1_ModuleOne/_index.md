@@ -18,16 +18,16 @@ Lean how to unlock the productivity of your developers on AWS with Coder.  Key l
 </ul>
 
 ## Coder on AWS DX Workshop 
-This workshop is designed for anyone with 200-Level AWS skills interested in improving the productivity and experience of anyone who codes in their organization.  The workshop is intended to be delivered in 2 Hours or less, and will cover deploying Coder Cloud Development Environment platform infrastructurea and Workspaces in AWS. <br>
+This workshop is designed for anyone with 200-Level AWS skills interested in improving the productivity and experience of anyone who codes in their organization.  The workshop is intended to be delivered in 2 Hours or less, and will cover deploying the Coder Cloud Development Environment platform infrastructurea and Workspaces in AWS. <br>
 
 Workshop Agenda:
 <ul>
     <li> Prerequisites *(15 minutes)* </li>
     <li> Setting up an account for the solution *(15 minutes)* </li>
     <li> Module 1: Coder Infrastructure and Deployment *(15 minutes)* </li>
-    <li> Module 2: Persona-Based Workspace Setup *(20 minutes)* </li>
-    <li> Module 3: Template and Workspace Management *(25 minutes)* </li>
-    <li> Module 4: Development Workflow and IDE Testing *(25 minutes)* </li>
+    <li> Module 2: Persona-Based Workspace Setup *(15 minutes)* </li>
+    <li> Module 3: Template and Workspace Management *(20 minutes)* </li>
+    <li> Module 4: Development Workflow and IDE Testing *(20 minutes)* </li>
     <li> Module 5: Coder Observability and Monitoring *(15 minutes)* </li>
 </ul>
 
