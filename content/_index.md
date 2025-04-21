@@ -10,9 +10,6 @@ weight: 1
 <br>
 
 ## Welcome
-
-**REMOVE:** By utilizing this template, you can create your workshops with little coding knowledge. These workshops use the Hugo Framework and the hugo-theme-learn submodules. By writing content using simple markdown code, Hugo creates the necessary HTML for you. Examples of code, files, and folders here can be modified, copied, pasted, and deleted as necessary. Block sections of instruction that should be removed will be explicitly marked with **REMOVE**. Other sections should be modified to reflect the workshop. For guidance on how to utilize the Hugo framework and markdown, please refer to the module titled "Hugo Framework And Markdown". That module can be removed once building the workshop is complete.
-
 Welcome to improving Developer Experience with AWS and Coder, your gateway to understanding and leveraging the Coder platform. This workshop is designed to equip you with the foundational knowledge and skills necessary to create, manage, and optimize a wide range of development environments. Whether you're a developer, platform engineer, or a partner embarking on your first experience with Coder, this workshop sets the stage for your success.
 
 Imagine a development environment that is seamless, consistent, and hassle-free, without the frustrations of mismatched dependencies or local machine configurations. Coder makes this possible by centralizing development in secure, self-hosted workspaces, ensuring that every developer has access to a standardized, fully equipped environment tailored to their needs. Instead of spending time troubleshooting setup issues, you can focus entirely on coding, knowing that your workspace is always ready, secure, and optimized for performance.
