@@ -3,11 +3,12 @@ title: Using Your Own AWS Account
 weight: 20
 ---
 
-::alert[If you are participating in an AWS guided event, your instructor will have given you access to an AWS account provisioned exclusively for this workshop through Workshop Studio. [Click here](/03-getting-started/01-aws-event) for instructions for joining an AWS guided event.]{header=Note}
+::alert[If you are participating in an AWS guided event, your instructor will have given you access to an AWS account provisioned exclusively for this workshop through Workshop Studio. [Click here](getting-started/01-aws-event/) for instructions for joining an AWS guided event.]{header=Note}
 
 ## Workshop resources
 
 The following resources will be deployed to run the workshop:
+<!-- CHANGE THIS TO LIST ALL THE RESOURCES AND INITIAL SETUP NEEDED FOR THE WORKSHOP -->
 
 - AWS Cloud9 environment named **Workshop**.
 - AWS CodeCommit repository named **Workshop**, populated with template code.
