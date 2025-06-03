@@ -4,7 +4,7 @@ weight: 11
 ---
 
 :::alert{header=Note}
-This section only applies if you are participating in an AWS guided event. [Click here](/getting-started/02-own-account/) for instructions on running the workshop in your own account.
+This section only applies if you are participating in an AWS guided event. [Click here](../02-own-account/index.en.md) for instructions on running the workshop in your own account.
 :::
 
 ## AWS Workshop Studio
