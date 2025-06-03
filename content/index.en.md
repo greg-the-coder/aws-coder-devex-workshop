@@ -1,7 +1,7 @@
 ---
 title: "AWS and Coder Agentic AI Development Workshop" # MODIFY THIS TO BE THE TITLE OF YOUR WORKSHOP
 chapter: true
-weight: 1
+weight: 01
 ---
 
 # AWS and Coder Agentic AI Development Workshop <!-- CHANGE THIS TO BE THE TITLE OF YOUR WORKSHOP -->
