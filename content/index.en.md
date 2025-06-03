@@ -5,9 +5,8 @@ weight: 01
 ---
 
 # AWS and Coder Agentic AI Development Workshop <!-- CHANGE THIS TO BE THE TITLE OF YOUR WORKSHOP -->
-<br>
-![Partner Logo](/static/images/coder_logo.png)  <!-- ADD YOUR PARTNER LOGO HERE USING THE INSTRUCTIONS BELOW -->
-<br>
+
+![Partner Logo](../static/images/coder_logo.png)
 
 ## Welcome
 Welcome to improving Developer Experience with AWS and Coder, your gateway to understanding and leveraging the Coder platform. This workshop is designed to equip you with the foundational knowledge and skills necessary to create, manage, and optimize a wide range of development environments. Whether you're a developer, platform engineer, or a partner embarking on your first experience with Coder, this workshop sets the stage for your success.
