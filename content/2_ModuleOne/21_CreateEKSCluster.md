@@ -19,12 +19,12 @@ From the AWS Cloudshell and in the AWS account/region being used for the worksho
 eksctl create cluster --name=your-cluster-name --enable-auto-mode --region your-region
 ```
 #### Step 2: Validate EKS Cluster Deployment
-After waiting 10-15 min for the EKS Cluster and supporting AWS Services to complete (Deployment can be monitored in CloudFormation), execute the following commands to retrieve your EKS cluster context and validate the EKS cluster deployment.
+After waiting 10-15 min for the EKS Cluster and supporting AWS Services to complete deployment (deployment can be monitored in CloudFormation), execute the following commands to retrieve your EKS cluster context and validate the EKS cluster deployment.
 ```bash
 # Update the cluster name and region as needed
 aws eks update-kubeconfig --name your-cluster-name --region your-region
 
-# List the EKS Nodes and validate their stats as "Ready"
+# List the EKS Nodes and validate their status as "Ready"
 kubectl get nodes
 ```
 
