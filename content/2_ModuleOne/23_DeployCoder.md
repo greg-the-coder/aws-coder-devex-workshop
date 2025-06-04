@@ -8,7 +8,7 @@ weight: 33
 
 ## Configure and Create Coder Containerized Control Plane  
 
-The containerized version of Coder Control Plane can be deployed to Kubernetes/EKS via Helm.  As part of this workshop, we will be updating the supplied values.yaml file used by the Coder Helm chart to initially deploy Coder and later update th Coder Control Plane configuration.
+The containerized version of Coder Control Plane can be deployed to Kubernetes/EKS via Helm.  As part of this workshop, we will be updating the supplied values.yaml file used by the Coder Helm chart to initially deploy Coder and later update the Coder Control Plane configuration.
 
 From the AWS Cloudshell and in the AWS account/region being used for the workshop, perform the following steps:
 
@@ -27,14 +27,14 @@ helm install coder coder-v2/coder \
 ```
 
 #### Step 2: Update Coder Configuration
-After several minutes the full Coder deployment will have completed in AWS, and the supporting Ingress/NLB is available, update the Coder Access and Wildcard Access URLs:
+After several minutes the full Coder deployment will have completed in AWS, and when the supporting Ingress/NLB is available, update the Coder Access and Wildcard Access URLs:
 ```bash
 # Obtain the Coder Service Loadbalancer Ingress endpoint:
 kubectl describe service coder -n coder | grep LoadBalancer
 
 # Update the coder-core-values-v2.yaml file with your specific endpoint configuration:
 # - Update CODER_ACCESS_URL with your actual domain or load balancer URL
-# - Update CODER_WILDCARD_ACCESS_URL with your wildcard domain
+# - Update CODER_WILDCARD_ACCESS_URL with your wildcard load balancer URL
 
 # Apply the updated configuration
 helm upgrade coder coder-v2/coder \
