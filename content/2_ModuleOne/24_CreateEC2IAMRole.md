@@ -1,36 +1,42 @@
 ---
-title: "Attach IAM Role" # MODIFY THIS TITLE
+title: "Create IAM/EC2 Control Plane Role" 
 chapter: true
-weight: 4 # MODIFY THIS VALUE TO REFLECT THE ORDERING OF THE MODULES
+weight: 34 
 ---
 
-<!-- MORE SUBMODULES CAN BE ADDED TO DIVIDE UP THE SETUP INTO SMALLER SECTIONS -->
-<!-- COPY AND PASTE THIS SUBMODULE FILE, RENAME, AND CHANGE THE CONTENTS AS NECESSARY -->
+# Create IAM/EC2 Control Plane Role 
 
-# Attaching an IAM Role
+## Create IAM Role for EC2 VM Coder Workspaces  
 
-## Submodule Four Heading <!-- MODIFY THIS SUBHEADING -->
+The Coder Control Plane requires additional permissions to create stand-alone AWS EC2 VM-Based Coder Workspaces from supporting Coder Templates.  AWS EC2 VM-based Workspaces will still be orchestrated by the core Coder Control Plane on EKS, and will use EKS pod-identity to associate the necessary IAM role.
 
-This paragraph block can be used to explain how to attach an IAM role if necessary. Example content guidance can be found at the bottom of the page.
+From the AWS Cloudshell and in the AWS account/region being used for the workshop, perform the following steps:
 
-{{% notice info %}}
-<p style='text-align: left;'>
-**REMOVE:** With the exception of _index.md, the module folders and filenames should be changed to better reflect their content, i.e. 1_Planning as the folder and 11_HowToBegin as the first submodule. Changing the "weight" value of the header is ultimately what reflects the order the modules are presented.
-</p>
-{{% /notice %}}
+#### Step 1: Create IAM Role and Trust Relationship for EC2 Workspace Support
+```bash
+# Make sure you have the ekspodid-trust-policy.json file in your current directory (update role name)
+aws iam create-role --role-name your-coder-ec2-workspace-role --assume-role-policy-document file://ekspodid-trust-policy.json
+
+# Attach necessary policies to the role 
+aws iam attach-role-policy \
+    --role-name your-coder-ec2-workspace-role \
+    --policy-arn arn:aws:iam::aws:policy/AmazonEC2FullAccess
+
+aws iam attach-role-policy \
+    --role-name your-coder-ec2-workspace-role \
+    --policy-arn arn:aws:iam::aws:policy/IAMReadOnlyAccess
+```
+
+#### Step 2: Associate IAM Role with EKS/Coder Control Plane
+```bash
+# Add IAM Pod Identity association for EC2 Workspace support
+aws eks create-pod-identity-association \
+    --cluster-name your-cluster-name \
+    --namespace coder \
+    --service-account coder \
+    --role-arn arn:aws:iam::your-aws-account-id:role/your-coder-ec2-workspace-role
+```
+Tip:  The updated IAM Role association may not take affect until the Coder Control Plane is restarted.  Delete the coder-(instance) pods in the coder namespace that are currently running, and validate that new ones are automatically started and running. 
 
 ### Next Section Heading <!-- MODIFY THIS HEADING -->
 This paragraph block can optionally be utilized to lead into the next section of the workshop.
-
-#### Example Content Guidance
-### Attach the IAM role to your instance <!-- MODIFY THIS SUBHEADING -->
-Will need
-
-    Follow this deep link to find your Cloud9 EC2 instance
-    (https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#Instances:search=aws-cloud9-circleci-workshop;sort=desc:launchTime)
-
-    Select the instance, then choose Actions / Security / Modify IAM role Attach IAM role
-
-    Choose the role that we created in the previous step: CircleCI-Workshop-Admin. Find IAM role
-
-    Click Save

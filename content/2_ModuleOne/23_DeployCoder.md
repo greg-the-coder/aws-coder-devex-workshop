@@ -43,7 +43,7 @@ helm upgrade coder coder-v2/coder \
     --version <Latest Stable Release>
 ```
 
-Tip:  Check the state of the coder-<instance> pod created in the coder namespace to ensure it's running, and pod logs to ensure it deployed successfully.  Common trouble-shooting issues arise around PostgreSQL DB connectivity.  Start by validating that the required kubernetes secret has the correct values, and the coder-db-postgresql pod is running. 
+Tip:  Check the state of the coder-(instance) pod created in the coder namespace to ensure it's running, and pod logs to ensure it deployed successfully.  Common trouble-shooting issues arise around PostgreSQL DB connectivity.  Start by validating that the required kubernetes secret has the correct values, and the coder-db-postgresql pod is running. 
 
 ### Next Section Heading <!-- MODIFY THIS HEADING -->
 This paragraph block can optionally be utilized to lead into the next section of the workshop.
