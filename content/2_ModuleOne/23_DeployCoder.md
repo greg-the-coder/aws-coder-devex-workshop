@@ -1,34 +1,49 @@
 ---
-title: "Create an IAM Role for your workspace" # MODIFY THIS TITLE
+title: "Deploy Coder Control Plane" 
 chapter: true
-weight: 3 # MODIFY THIS VALUE TO REFLECT THE ORDERING OF THE MODULES
+weight: 33 
 ---
 
-<!-- MORE SUBMODULES CAN BE ADDED TO DIVIDE UP THE SETUP INTO SMALLER SECTIONS -->
-<!-- COPY AND PASTE THIS SUBMODULE FILE, RENAME, AND CHANGE THE CONTENTS AS NECESSARY -->
+# Deploy Coder Control Plane 
 
-# Create an IAM Role for your workspace <!-- MODIFY THIS SUBHEADING -->
+## Configure and Create Coder Containerized Control Plane  
 
-## Submodule Three Heading <!-- MODIFY THIS SUBHEADING -->
+The containerized version of Coder Control Plane can be deployed to Kubernetes/EKS via Helm.  As part of this workshop, we will be updating the supplied values.yaml file used by the Coder Helm chart to initially deploy Coder and later update th Coder Control Plane configuration.
 
-This paragraph block can be used to explain how to create a workspace if necessary. Example content guidance can be found at the bottom of the page.
+From the AWS Cloudshell and in the AWS account/region being used for the workshop, perform the following steps:
 
-{{% notice info %}}
-<p style='text-align: left;'>
-**REMOVE:** With the exception of _index.md, the module folders and filenames should be changed to better reflect their content, i.e. 1_Planning as the folder and 11_HowToBegin as the first submodule. Changing the "weight" value of the header is ultimately what reflects the order the modules are presented.
-</p>
-{{% /notice %}}
+#### Step 1: Install Coder
+Find the latest stable release from the [Coder Releases Page](https://github.com/coder/coder/releases)
+```bash
+# Add Coder Helm repository
+helm repo add coder-v2 https://helm.coder.com/v2
+
+# Install Coder using the provided values file
+# Make sure the provided coder-core-values-v2.yaml file is in your current directory
+helm install coder coder-v2/coder \
+    --namespace coder \
+    --values coder-core-values-v2.yaml \
+    --version <Latest Stable Release>
+```
+
+#### Step 2: Update Coder Configuration
+After several minutes the full Coder deployment will have completed in AWS, and the supporting Ingress/NLB is available, update the Coder Access and Wildcard Access URLs:
+```bash
+# Obtain the Coder Service Loadbalancer Ingress endpoint:
+kubectl describe service coder -n coder | grep LoadBalancer
+
+# Update the coder-core-values-v2.yaml file with your specific endpoint configuration:
+# - Update CODER_ACCESS_URL with your actual domain or load balancer URL
+# - Update CODER_WILDCARD_ACCESS_URL with your wildcard domain
+
+# Apply the updated configuration
+helm upgrade coder coder-v2/coder \
+    --namespace coder \
+    --values coder-core-values-v2.yaml \
+    --version <Latest Stable Release>
+```
+
+Tip:  Check the state of the coder-<instance> pod created in the coder namespace to ensure it's running, and pod logs to ensure it deployed successfully.  Common trouble-shooting issues arise around PostgreSQL DB connectivity.  Start by validating that the required kubernetes secret has the correct values, and the coder-db-postgresql pod is running. 
 
 ### Next Section Heading <!-- MODIFY THIS HEADING -->
 This paragraph block can optionally be utilized to lead into the next section of the workshop.
-
-#### Example Content Guidance
-
-### Create an IAM Role for your workspace <!-- MODIFY THIS SUBHEADING -->
-
-Info: Starting from here, when you see command to be entered such as below, you will enter these commands into Cloud9 IDE. You can use the Copy to clipboard feature (right hand upper corner) to simply copy and paste into Cloud9. In order to paste, you can use Ctrl + V for Windows or Command + V for Mac.
-
-    Follow this deep link to create an IAM role with Administrator access.
-    Confirm that AWS service and EC2 are selected, then click Next to view permissions.
-    Confirm that AdministratorAccess is checked, then click Next to review.
-    Enter CircleCI-Workshop-Admin for the Name, and select Create Role createrole
